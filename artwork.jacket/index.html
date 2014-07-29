@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+    <head>
+        <meta name="jacket.title" content="Artwork" />
+        <meta name="jacket.author" content="Brett Bukowski" />
+        <meta name="jacket.url" content="https://github.com/BrettBukowski/artwork" />
+        <meta name="jacket.version" content="1.0" />
+        <meta name="jacket.bounds" content="313x314" />
+        <meta name="jacket.variations" content="Small (190x223), Large" />
+        <meta name="jacket.uid" content="com.brettbukowski.artwork" />
+
+        <link rel="stylesheet" type="text/css" href="index.css"  />
+
+        <script>
+
+        Simplify.listen(Simplify.events.ready, function (initial_state) {
+            $("body").animate({ opacity: 1 });
+        });
+
+        Simplify.listen(Simplify.events.newVariation, function(variation) {
+            if (/small/i.test(variation.toLowerCase())) {
+                $("body").addClass("xs");
+            }
+            else {
+                $("body").removeClass("xs");
+            }
+        });
+
+        Simplify.listen(Simplify.events.newTrack, function(artist, title, album) {
+            if (artist && title) {
+                $(".track").html(artist + "<strong>" + title + "</strong>");
+            }
+        });
+
+        Simplify.listen(Simplify.events.newCover, function(cover) {
+            if (cover) {
+                $(".cover").css("background-image", "url('" + cover + "')");
+            }
+        });
+
+        </script>
+    </head>
+    <body>
+        <div class="cover"></div>
+        <div class="track"></div>
+    </body>
+</html>
