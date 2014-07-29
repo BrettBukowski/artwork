@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     background: transparent;
     color: #fff;
@@ -14,40 +18,31 @@ body {
 
 .cover {
     display: block;
-    height: 254px;
-    left: 42px;
+    height: 255px;
     position: relative;
-    top: 10px;
-    width: 258px;
+    width: 255px;
     -webkit-background-size: cover !important;
 }
 
-.xs .cover {
+.small .cover {
     height: 155px;
-    left: 27px;
-    top: 5px;
-    width: 152px;
+    width: 155px;
 }
 
 .track {
     font-family: "Helvetica Neue";
     font-size: 13px;
-    font-weight: bolder;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    text-align: center;
+    margin: 15px 0;
     text-shadow: #333 0 1px 3px;
     width: 255px;
 }
 
-.xs .track {
+.small .track {
     font-size: 11px;
     margin-top: 10px;
-    width: 150px;
+    width: 155px;
 }
 
-.track strong {
-    display: block;
+.track .title {
     font-size: 120%;
 }
